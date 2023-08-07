@@ -1,9 +1,12 @@
 import { default as axios } from "axios";
 import { useEffect } from "react";
 import { Config } from "../../Config";
+import { useTranslation } from "react-i18next";
 
 export const OAuthFlow: React.FC = () => {
     const CODE = new URLSearchParams(window.location.search).get("code");
+
+    const { t } = useTranslation();
 
     useEffect(() => {
         Config.getAPIUrl().then((url) => { 
@@ -13,12 +16,12 @@ export const OAuthFlow: React.FC = () => {
                 window.location.href = "/daszbord";
             }).catch((_e) => {
                 console.error(_e);
-                alert("SORY BYKU NIE MASZ SUBA W KURNIKU ALBO SERVER SIE WYWALIŁ XPP");
+                alert(t("OAUTH_LOGIN_ERROR"));
                 window.location.href = "/";
              });
         });
       
-    }, [CODE]);
+    }, [CODE, t]);
     
     return <><h2 style={{color: "white"}}>CZEKAJ PRZETWARZAM MORDO DAJ MI HWILE OK ...</h2></>;
 }

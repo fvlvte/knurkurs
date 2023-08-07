@@ -1,7 +1,9 @@
 import { useEffect } from 'react';
 import './LoginView.css';
+import { useTranslation } from 'react-i18next';
 
 export const LoginView: React.FC = () => {
+    const { t } = useTranslation();
     const CLIENT_ID = process.env.REACT_APP_CLIENT_ID || "z4ngv8hovfeaq7rstf7egijqn351wu";
     const REDIRECT_URL = process.env.REACT_APP_REDIRECT_URL || "http://localhost:3001/oauth-flow";
 
@@ -23,9 +25,9 @@ export const LoginView: React.FC = () => {
     return <div className='kołtainer'>
         <div className='login'>
             <img className="logo" alt="knur" src="logo.png"/>
-            <h1>KURS CODE</h1>
-            <h2>LOGOWANIE</h2>
-            <button onClick={doTwitchAuth}>ZALOGUJ Z TWICZ</button>
+            <h1>{t("YES-CODE Course")}</h1>
+            <h2>{t("LOGIN")}</h2>
+            <button onClick={doTwitchAuth}>{t("LOGIN WITH TWITCH")}</button>
         </div>
     </div>;
 }

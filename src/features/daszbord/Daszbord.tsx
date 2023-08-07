@@ -2,8 +2,10 @@ import { useEffect, useState } from "react";
 import { default as axios } from "axios";
 import "./Daszbord.css";
 import { Config } from "../../Config";
+import { useTranslation } from 'react-i18next';
 
 export const Daszbord: React.FC = () => {
+    const { t } = useTranslation();
     const [userId, setUserId] = useState<string>("");
 
     useEffect(() => {
@@ -13,7 +15,6 @@ export const Daszbord: React.FC = () => {
                 setUserId(response.data.id);
             }).catch((_e) => {
                 console.error(_e);
-                alert("SORY BYKU NIE MASZ SUBA W KURNIKU ALBO SERVER SIE WYWALIŁ XPP");
                 window.location.href = "/";
                 localStorage.removeItem("token");
              });
@@ -27,7 +28,7 @@ export const Daszbord: React.FC = () => {
     }
 
     return <>
-        <h1 style={{ color: "white" }}>WITAJ PONCZUSIU SŁODZIUTKU O ID {userId}</h1 >
-        <button onClick={doWylizania}>WYGOLUJ</button>
+        <h1 style={{ color: "white" }}>{ t("DASZBORD_WELCUM")} {userId}</h1>
+        <button onClick={doWylizania}>{ t("LOGOUT") }</button>
     </>;
 }

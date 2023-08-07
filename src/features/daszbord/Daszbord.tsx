@@ -20,5 +20,14 @@ export const Daszbord: React.FC = () => {
         });
 
     }, []);
-    return <><h1 style={{color: "white"}}>WITAJ PONCZUSIU SŁODZIUTKU O ID {userId}</h1></>;
+
+    const doWylizania = () => { 
+        localStorage.removeItem("token");
+        window.location.href = "/";
+    }
+
+    return <>
+        <h1 style={{ color: "white" }}>WITAJ PONCZUSIU SŁODZIUTKU O ID {userId}</h1 >
+        <button onClick={doWylizania}>WYGOLUJ</button>
+    </>;
 }

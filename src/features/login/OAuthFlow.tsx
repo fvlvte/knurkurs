@@ -1,11 +1,12 @@
 import { default as axios } from "axios";
 import { useEffect } from "react";
+import { Config } from "../../Config";
 
 export const OAuthFlow: React.FC = () => {
     const CODE = new URLSearchParams(window.location.search).get("code");
 
     useEffect(() => {
-        axios.post("http://localhost:80/knurclubcourses/v1/twitch/oauth", { code: CODE })
+        axios.post(`${Config.getAPIUrl()}/knurclubcourses/v1/twitch/oauth`, { code: CODE })
             .then((response) => {
                 localStorage.setItem("token", response.data.authtoken);
                 window.location.href = "/daszbord";

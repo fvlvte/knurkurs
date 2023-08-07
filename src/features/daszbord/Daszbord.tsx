@@ -1,11 +1,14 @@
 import { useEffect, useState } from "react";
 import { default as axios } from "axios";
 import "./Daszbord.css";
+import { Config } from "../../Config";
 
 export const Daszbord: React.FC = () => {
     const [userId, setUserId] = useState<string>("");
+
     useEffect(() => {
-        axios.get("http://localhost:80/knurclubcourses/v1/twitch/info", {headers: {Authorization: `${localStorage.getItem("token")}`}})
+        Config.getAPIUrl().then((url) => {
+            axios.get(`${url}/knurclubcourses/v1/twitch/info`, {headers: {Authorization: `${localStorage.getItem("token")}`}})
             .then((response) => {
                 setUserId(response.data.id);
             }).catch((_e) => {
@@ -14,6 +17,8 @@ export const Daszbord: React.FC = () => {
                 window.location.href = "/";
                 localStorage.removeItem("token");
              });
+        });
+
     }, []);
     return <><h1 style={{color: "white"}}>WITAJ PONCZUSIU SŁODZIUTKU O ID {userId}</h1></>;
 }

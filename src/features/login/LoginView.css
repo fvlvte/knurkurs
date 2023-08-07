@@ -1,0 +1,25 @@
+.kołtainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+}
+
+.logo {
+    height: 213.7px;
+    width: 213.7px;
+}
+
+.login {
+    margin-top: calc(21.37% / 2);
+    border: 1px dotted black;
+    border-radius: 5%;
+    text-align: center;
+    width: 50%;
+
+    display: block;
+
+    background-color: pink;
+}

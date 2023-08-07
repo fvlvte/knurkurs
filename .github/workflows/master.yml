@@ -5,7 +5,7 @@ jobs:
   build:
     env:
       NODE_ENV: production
-      REACT_APP_REDIRECT_URL: https://knur.club/oauth-flow
+      REACT_APP_REDIRECT_URL: https://kurs.knur.club/oauth-flow
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3

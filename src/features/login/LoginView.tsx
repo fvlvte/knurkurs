@@ -1,6 +1,7 @@
 import { useEffect } from 'react';
 import './LoginView.css';
 import { useTranslation } from 'react-i18next';
+import { LoginButton } from './LoginButton';
 
 export const LoginView: React.FC = () => {
     const { t } = useTranslation();
@@ -22,12 +23,12 @@ export const LoginView: React.FC = () => {
     if(localStorage.getItem("token")) window.location.href = "/daszbord";
   }, [])
 
-    return <div className='kołtainer'>
+  return <div className='kołtainer'>
         <div className='login'>
             <img className="logo" alt="knur" src="logo.png"/>
             <h1>{t("YES-CODE Course")}</h1>
             <h2>{t("LOGIN")}</h2>
-            <button onClick={doTwitchAuth}>{t("LOGIN WITH TWITCH")}</button>
+            <LoginButton/>
         </div>
     </div>;
 }

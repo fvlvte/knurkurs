@@ -1,16 +1,9 @@
 .kołtainer {
     display: flex;
-    flex-direction: column;
     align-items: center;
     justify-content: center;
     height: 100%;
     width: 100%;
-}
-
-.headContainer {
-    width: 100%;
-    height: 48px;
-    background-color: wheat;
 }
 
 .logo {
@@ -19,13 +12,19 @@
 }
 
 .login {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    flex-basis: 200px;
+    flex-grow: 0.6;
     margin-top: calc(21.37% / 2);
-    border: 1px dotted black;
+    box-shadow: 1px 1px 12px 0px #cccccc;
     border-radius: 5%;
     text-align: center;
     width: 50%;
-
-    display: block;
-
-    background-color: #696969;
+    padding: 30px;
+    background: #eeeeee;
+    /* IMO strasznie chujowy ten gradient */
+    /* background: radial-gradient(circle, rgba(255,255,255,1) 19%, rgba(2,210,197,1) 100%); */
 }

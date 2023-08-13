@@ -28,6 +28,7 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
+    "start-replit": "REACT_APP_REDIRECT_URL=https://knurkurs.fvlvte.repl.co/oauth-flow REACT_APP_API_URL=REACT_APP_API_URL react-scripts start",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",

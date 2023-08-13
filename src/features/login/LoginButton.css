@@ -1,0 +1,31 @@
+.logo {
+  max-height: 500px;
+  max-width: 500px;
+  width: 20%;
+  height: 20%;
+}
+
+.loginButtonContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: fit-content;
+  padding: 6px 0;
+  border-radius: 7px;
+  font-weight: bold;
+  box-shadow: 0 0 5px 1px #584b6d;
+  border: 1px solid #584b6d;
+  background-color: #ffffff;
+  cursor:pointer;
+  transition: 0.5s;
+}
+
+.loginButtonContainer:hover {
+  box-shadow: initial;
+}
+
+.loginButtonText {
+  margin-right: 6px;
+  color: #6441a4;
+  font-family: Arial;
+}

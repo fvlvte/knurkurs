@@ -3,6 +3,7 @@ import { default as axios } from "axios";
 import "./Daszbord.css";
 import { Config } from "../../Config";
 import { useTranslation } from 'react-i18next';
+import { Soszials } from "../login/Soszials";
 
 export const Daszbord: React.FC = () => {
     const { t } = useTranslation();
@@ -30,5 +31,6 @@ export const Daszbord: React.FC = () => {
     return <>
         <h1 style={{ color: "white" }}>{ t("DASZBORD_WELCUM")} {userId}</h1>
         <button onClick={doWylizania}>{ t("LOGOUT") }</button>
+        <Soszials />
     </>;
 }

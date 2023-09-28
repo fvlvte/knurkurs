@@ -18,21 +18,21 @@ const router = createBrowserRouter([
   },
   {
     path: "/oauth-flow",
-    element: <OAuthFlow/>
+    element: <OAuthFlow />
   },
   {
     path: "/daszbord",
-    element: <Daszbord/>
+    element: <Daszbord />
   }
 ]);
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
-root.render( 
-    <div style={{backgroundColor: "black"}}>
-      <RouterProvider router={router} />
-    </div>
+root.render(
+  <div style={{ backgroundColor: "black" }}>
+    <RouterProvider router={router} />
+  </div>
 );
 
 reportWebVitals();

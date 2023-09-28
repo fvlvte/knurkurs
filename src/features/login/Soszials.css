@@ -1,0 +1,15 @@
+.socialsWrapper{
+  position:fixed;
+  padding:0 10px;
+  left:50%;
+  bottom:0;
+  transform:translateX(-50%);
+  display:flex; 
+  gap:10px;
+  align-items:center;
+  color:#fff;
+}
+
+.socialsWrapper img{
+  width:30px;
+}
